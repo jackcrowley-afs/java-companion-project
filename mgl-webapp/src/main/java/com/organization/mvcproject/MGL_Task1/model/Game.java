@@ -2,6 +2,8 @@ package com.organization.mvcproject.MGL_Task1.model;
 
 import org.springframework.stereotype.Component;
 
+//TODO 1.0:  Need to figure out the renaming for the methods. -Jack.crowley
+
 @Component
 public class Game {
 
