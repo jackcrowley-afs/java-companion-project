@@ -2,7 +2,6 @@ package com.organization.mvcproject.MGL_Task1.model;
 
 import org.springframework.stereotype.Component;
 
-//TODO 1.0:  Need to figure out the renaming for the methods. -Jack.crowley
 
 @Component
 public class Game {
@@ -20,19 +19,19 @@ public class Game {
 		this.id = id;
 	}
 
-	public String getGame_name() {
+	public String getName() {
 		return name;
 	}
 
-	public void setGame_name(String game_name) {
+	public void setName(String game_name) {
 		this.name = game_name;
 	}
 
-	public String getGame_genre() {
+	public String getGenre() {
 		return genre;
 	}
 
-	public void setGame_genre(String game_genre) {
+	public void setGenre(String game_genre) {
 		this.genre = game_genre;
 	}
 
