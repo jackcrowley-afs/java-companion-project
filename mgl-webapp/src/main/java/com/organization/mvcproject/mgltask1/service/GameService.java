@@ -2,7 +2,7 @@ package com.organization.mvcproject.mgltask1.service;
 
 import java.util.List;
 
-import com.organization.mvcproject.MGL_Task1.model.Game;
+import com.organization.mvcproject.mgltask1.model.Game;
 
 
 public interface GameService {
