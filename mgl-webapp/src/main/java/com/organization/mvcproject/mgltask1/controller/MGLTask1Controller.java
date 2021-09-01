@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.organization.mvcproject.MGL_Task1.model.Game;
 import com.organization.mvcproject.MGL_Task1.model.Review;
-import com.organization.mvcproject.MGL_Task1.service.GameService;
+import com.organization.mvcproject.mgltask1.service.GameService;
 
 
 @Controller
