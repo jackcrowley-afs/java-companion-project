@@ -10,7 +10,7 @@ import com.organization.mvcproject.MGL_Task1.model.Game;
 //TODO 1.0  follow java class naming, improve class name
 //TODO 1.0  "javaGameService" service reference name is not necessary, remove it.
 @Service("javaGameService")
-public class Game_Service_Impl implements GameService {
+public class GameServiceImpl implements GameService {
 
 	/**
 	 * TODO 2.0 The class that interacts with persistent data is called a Data Access Object(DAO)
