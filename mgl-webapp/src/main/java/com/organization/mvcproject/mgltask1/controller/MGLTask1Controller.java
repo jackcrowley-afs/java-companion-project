@@ -1,4 +1,3 @@
-//TODO 1.0   package naming convention, improve package declaration
 package com.organization.mvcproject.mgltask1.controller;
 
 import java.util.List;
