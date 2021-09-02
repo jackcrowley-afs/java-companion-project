@@ -12,7 +12,7 @@ angular.module('GameApp').service('GameService', ['$http', function($http) {
 		return factory;
 
 		function fetchAllGames() {
-			return $http.get(REST_SERVICE_URI + 'getAll').then(function(response) {
+			return $http.get(REST_SERVICE_URI + 'get-all').then(function(response) {
 					return response.data;
 				}
 			);

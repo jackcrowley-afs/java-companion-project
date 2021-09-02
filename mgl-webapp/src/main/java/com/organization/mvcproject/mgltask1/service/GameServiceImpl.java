@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.organization.mvcproject.mgltask1.model.Game;
+import com.organization.mvcproject.model.Game;
 
 
 @Service

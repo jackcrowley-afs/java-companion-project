@@ -1,4 +1,4 @@
-package com.organization.mvcproject.mgltask1.model;
+package com.organization.mvcproject.model;
 
 import org.springframework.stereotype.Component;
 

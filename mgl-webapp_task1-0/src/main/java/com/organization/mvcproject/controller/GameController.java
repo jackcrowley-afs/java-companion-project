@@ -26,7 +26,7 @@ public class GameController {
 
 
 
-	@GetMapping(value = "/getAll")
+	@GetMapping(value = "/get-all")
 	public ResponseEntity<List<Game>> fetchAllGames() {
 		return new ResponseEntity<List<Game>>(gameService.retrieveAllGames(), HttpStatus.OK);
 	}
