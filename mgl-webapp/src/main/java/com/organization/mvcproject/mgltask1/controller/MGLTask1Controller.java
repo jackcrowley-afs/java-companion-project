@@ -21,9 +21,9 @@ import com.organization.mvcproject.mgltask1.service.GameService;
 @Controller
 public class MGLTask1Controller {
 
-	//TODO 1.0 variable naming convention, improve reference name
+	
 	@Autowired
-	private GameService javaGameService;
+	private GameService gameManager;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
@@ -56,13 +56,13 @@ public class MGLTask1Controller {
 	
 	@RequestMapping(value = "/game/", method = RequestMethod.GET)
 	public ResponseEntity<List<Game>> fetchAllGames() {
-		return new ResponseEntity<List<Game>>(javaGameService.retrieveAllGames(), HttpStatus.OK);
+		return new ResponseEntity<List<Game>>(gameManager.retrieveAllGames(), HttpStatus.OK);
 	}
 
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Void> createGame(@RequestBody Game game) {
-		javaGameService.saveGame(game);
+		gameManager.saveGame(game);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 }
