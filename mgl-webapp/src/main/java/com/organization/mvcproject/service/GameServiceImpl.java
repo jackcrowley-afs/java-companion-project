@@ -1,4 +1,4 @@
-package com.organization.mvcproject.mgltask1.service;
+package com.organization.mvcproject.service;
 
 import java.util.ArrayList;
 import java.util.List;

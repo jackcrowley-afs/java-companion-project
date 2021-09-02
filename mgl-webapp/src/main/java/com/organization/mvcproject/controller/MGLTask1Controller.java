@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.organization.mvcproject.mgltask1.service.GameService;
 import com.organization.mvcproject.model.Game;
 import com.organization.mvcproject.model.Review;
+import com.organization.mvcproject.service.GameService;
 
 
 @Controller
