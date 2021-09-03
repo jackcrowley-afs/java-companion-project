@@ -60,7 +60,7 @@ public class GameController {
 	}
 
 	
-	@RequestMapping(value = "/", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/game/", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Void> createGame(@RequestBody Game game) {
 		gameManager.saveGame(game);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
