@@ -19,7 +19,7 @@ import com.organization.mvcproject.service.GameService;
 
 
 @Controller
-public class MGLTask1Controller {
+public class GameController {
 
 	
 	@Autowired
