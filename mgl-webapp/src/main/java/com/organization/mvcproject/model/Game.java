@@ -11,11 +11,11 @@ public class Game {
 	private String name;
 	private String genre;
 
-	public Long getGame_Id() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setGame_id(Long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
