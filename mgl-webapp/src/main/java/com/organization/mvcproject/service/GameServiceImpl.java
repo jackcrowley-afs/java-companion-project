@@ -1,5 +1,7 @@
 package com.organization.mvcproject.service;
 
+
+//Why is this ArrayList called here?  Do we need to use ArrayList instead of List?
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +19,9 @@ public class GameServiceImpl implements GameService {
 	 *  or a Repository class. The private static list is mocking our persistance of games.
 	 *   
 	 *  Move this list, and methods operating on this list to an appropriately named package and class.
+	 *  
+	 *  UPDATE: Sept-3-2021:  Moved functions to MockDAO.
+	 *  All that remains is to make functions for them.
 	 */
 	
 	
