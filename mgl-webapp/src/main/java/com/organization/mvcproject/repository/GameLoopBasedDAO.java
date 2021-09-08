@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.organization.mvcproject.model.Game;
 
-/** MockDAO:
+/** GameLoopBasedDAO:
  * 
  *  2.0 Task:
  *  
