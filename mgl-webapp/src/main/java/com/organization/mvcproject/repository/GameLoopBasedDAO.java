@@ -113,6 +113,8 @@ public class GameLoopBasedDAO {
 		//This cast is considered unnecessary, but we need to 2.1 refactoring.
 		games.add((Game)game);
 		
+		System.out.println(games);
+		
 		return game;
 		
 	}

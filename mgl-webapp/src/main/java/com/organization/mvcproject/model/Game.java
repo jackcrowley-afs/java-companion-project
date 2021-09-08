@@ -23,16 +23,21 @@ public class Game {
 		return name;
 	}
 
-	public void setName(String game_name) {
-		this.name = game_name;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getGenre() {
 		return genre;
 	}
 
-	public void setGenre(String game_genre) {
-		this.genre = game_genre;
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
+	public String toString()
+	{
+		return id + "-" + name + "-" + genre;
+	}
+	
 }
