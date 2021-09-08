@@ -38,8 +38,8 @@ public class GameServiceImpl implements GameService {
 	//saveGame: Saves a Game on the system.
 	@Override
 	public Game saveGame(Game game) {
-		game.setId(MockDAO.incrementGameId());
-		MockDAO.addGame(game);
+		//game.setId(MockDAO.incrementGameId());
+		MockDAO.saveGame(game);
 		return game;
 	}
 	

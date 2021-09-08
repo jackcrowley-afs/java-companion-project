@@ -70,8 +70,76 @@ public class MockDAO {
 	}
 	
 	public static void addGame(Game game)
-	{
+	{	
 		games.add(game);
 	}
+	
+	
+	/**
+	 * saveGame
+	 * 
+	 * 2.0 Task:  Save a game, but update it if it already exists.
+	 * 
+	 * 
+	 * @param game
+	 * @return
+	 */
+	public static Game saveGame(Game game)
+	{
+		
+		if(game.getId() != null)
+		{
+			Game foundGame = findGameById(game.getId());
+					
+			//If this is true, then we have a legit game with the same ID in the list.
+			if(foundGame != null)
+			{
+				for (int x = 0 ; x < games.size() ; x++)
+				{
+					if(game.getId().equals(games.get(x).getId()))
+					{
+						return games.set(x, game);
+					}
+					
+				}
+			}
+			
+		}
+		
+		game.setId(++gameId);
+		
+		games.add((Game)game);
+		
+		return game;
+		
+	}
+
+
+	/**
+	 * findGameById
+	 * 
+	 * Find the first game in the ArrayList with the specified ID.
+	 * 
+	 * 
+	 * 
+	 * 
+	 * @param id
+	 * @return
+	 */
+	private static Game findGameById(Long id) {
+		
+		for (Game game : games)
+		{
+			if(game.getId() == id)
+			{
+				return game;
+			}
+			
+		}
+		
+		
+		return null;
+	}
+	
 	
 }
