@@ -19,7 +19,7 @@ import com.organization.mvcproject.model.Game;
  */
 
 @Repository
-public class MockDAO {
+public class GameLoopBasedDAO {
 
 	private static Long gameId = new Long(0);
 	private static Long companyId = new Long(0);
@@ -87,6 +87,7 @@ public class MockDAO {
 	public static Game saveGame(Game game)
 	{
 		
+		//if the game ID is already there, we need to check the existing values.
 		if(game.getId() != null)
 		{
 			Game foundGame = findGameById(game.getId());
@@ -98,6 +99,7 @@ public class MockDAO {
 				{
 					if(game.getId().equals(games.get(x).getId()))
 					{
+						//We have confirmed this game exists.  We update and close.
 						return games.set(x, game);
 					}
 					
@@ -108,6 +110,7 @@ public class MockDAO {
 		
 		game.setId(++gameId);
 		
+		//This cast is considered unnecessary, but we need to 2.1 refactoring.
 		games.add((Game)game);
 		
 		return game;

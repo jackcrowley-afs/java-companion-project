@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.organization.mvcproject.model.Game;
-import com.organization.mvcproject.repository.MockDAO;
+import com.organization.mvcproject.repository.GameLoopBasedDAO;
 
 @Service
 public class GameServiceImpl implements GameService {
@@ -25,13 +25,13 @@ public class GameServiceImpl implements GameService {
 	 */
 	
 	@Autowired
-	private MockDAO mockDao;
+	private GameLoopBasedDAO mockDao;
 	
 	
 	//retrieveAllGames(): Gets all games on the system.
 	@Override
 	public List<Game> retrieveAllGames() {
-		return MockDAO.getGames();
+		return GameLoopBasedDAO.getGames();
 	}
 
 	
@@ -39,14 +39,14 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public Game saveGame(Game game) {
 		//game.setId(MockDAO.incrementGameId());
-		MockDAO.saveGame(game);
+		GameLoopBasedDAO.saveGame(game);
 		return game;
 	}
 	
 	
 	public boolean deleteGame(Long id) {
 		
-		return MockDAO.deleteGame(id);
+		return GameLoopBasedDAO.deleteGame(id);
 	}
 
 
@@ -61,7 +61,7 @@ public class GameServiceImpl implements GameService {
 	 */
 	public static List<Game> findGamesByGenre(String genre)
 	{
-		return MockDAO.findGamesByGenre(genre);
+		return GameLoopBasedDAO.findGamesByGenre(genre);
 	}
 
 }
