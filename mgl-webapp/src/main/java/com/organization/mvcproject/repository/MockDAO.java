@@ -158,6 +158,7 @@ public class MockDAO {
 			if(id == games.get(x).getId())
 			{
 				games.remove(games.get(x));
+				return true;
 			}
 			
 		}
