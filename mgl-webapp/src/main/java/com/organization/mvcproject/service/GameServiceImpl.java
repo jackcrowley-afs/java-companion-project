@@ -5,11 +5,11 @@ package com.organization.mvcproject.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.organization.mvcproject.model.Game;
-
-import com.organization.mvcproject.dao.MockDAO;
+import com.organization.mvcproject.repository.MockDAO;
 
 @Service
 public class GameServiceImpl implements GameService {
@@ -23,6 +23,9 @@ public class GameServiceImpl implements GameService {
 	 *  UPDATE: Sept-3-2021:  Moved functions to MockDAO.
 	 *  All that remains is to make functions for them.
 	 */
+	
+	@Autowired
+	private MockDAO mockDao;
 	
 	
 	//retrieveAllGames(): Gets all games on the system.
