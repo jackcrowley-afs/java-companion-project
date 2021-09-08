@@ -126,7 +126,7 @@ public class MockDAO {
 	 * @param id
 	 * @return
 	 */
-	private static Game findGameById(Long id) {
+	public static Game findGameById(Long id) {
 		
 		for (Game game : games)
 		{
@@ -140,6 +140,9 @@ public class MockDAO {
 		
 		return null;
 	}
+	
+	
+	
 	
 	
 }
