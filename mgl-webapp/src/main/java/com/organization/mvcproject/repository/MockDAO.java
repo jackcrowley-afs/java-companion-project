@@ -130,7 +130,7 @@ public class MockDAO {
 		
 		for (Game game : games)
 		{
-			if(game.getId() == id)
+			if(game.getId().equals(id))
 			{
 				return game;
 			}
