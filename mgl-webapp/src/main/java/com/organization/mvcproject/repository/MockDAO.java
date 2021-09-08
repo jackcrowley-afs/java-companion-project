@@ -141,8 +141,29 @@ public class MockDAO {
 		return null;
 	}
 	
-	
-	
+	/**
+	 * deleteGame
+	 * 
+	 * Deletes the game that matches the ID of the parameter.
+	 * 
+	 * Note: Game IDs are unique.  There should be no collisions within the list.
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public static boolean deleteGame(Long id) {
+		
+		for (int x = 0 ; x < games.size() ; x++)
+		{
+			if(id == games.get(x).getId())
+			{
+				games.remove(games.get(x));
+			}
+			
+		}
+		
+		return false;
+	}
 	
 	
 }

@@ -44,6 +44,10 @@ public class GameServiceImpl implements GameService {
 	}
 	
 	
+	public boolean deleteGame(Long id) {
+		
+		return MockDAO.deleteGame(id);
+	}
 
 
 
