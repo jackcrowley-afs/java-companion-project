@@ -50,5 +50,18 @@ public class GameServiceImpl implements GameService {
 	}
 
 
+	/**
+	 * findGamesByGenre
+	 * 
+	 * Return list of all games that match genre.  NULL if empty.
+	 * 
+	 * 
+	 * @param genre
+	 * @return
+	 */
+	public static List<Game> findGamesByGenre(String genre)
+	{
+		return MockDAO.findGamesByGenre(genre);
+	}
 
 }

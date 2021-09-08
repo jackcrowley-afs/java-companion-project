@@ -164,6 +164,35 @@ public class MockDAO {
 		
 		return false;
 	}
+
+
+	/**
+	 * findGamesByGenre
+	 * 
+	 * Return a list of all games found that match the genre parameter.
+	 * Return null if nothing is found.
+	 *
+	 * @param genre
+	 * @return
+	 */
+	public static List<Game> findGamesByGenre(String genre) {
+		
+		
+		List<Game> returnList = new ArrayList<Game>();
+		
+		for (Game game : games)
+		{
+			if(game.getGenre().equals(genre))
+			{
+				returnList.add(game);
+			}
+		}
+		
+		
+		//Specification from the Example.  We should have it return 
+		//NULL if it found nothing, just for safety.
+		return (returnList.isEmpty() ? null : returnList);
+	}
 	
 	
 }
