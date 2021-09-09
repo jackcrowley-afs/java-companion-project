@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.organization.mvcproject.api.model.Game;
+import com.organization.mvcproject.api.model.Review;
 import com.organization.mvcproject.model.GameImpl;
-import com.organization.mvcproject.model.Review;
+import com.organization.mvcproject.model.ReviewImpl;
 
 @Controller
 public class HomeController {
@@ -51,7 +52,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/review", method = RequestMethod.GET)
 	public ModelAndView review() {
-		return new ModelAndView("review", "command", new Review());
+		return new ModelAndView("review", "command", new ReviewImpl());
 	}
 
 	@RequestMapping(value = "/addReview", method = RequestMethod.POST)
