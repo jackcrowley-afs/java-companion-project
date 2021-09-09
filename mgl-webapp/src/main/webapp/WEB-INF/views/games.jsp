@@ -84,6 +84,14 @@
                                 <td><span ng-bind="currentGame.name"></span></td>
                                 <td><span ng-bind="currentGame.genre"></span></td>
                                 <td>
+                                
+                                <!--  SEPT-9: Add a Deletion Button Here. -->
+                                
+                                <form ng-submit="MGL_T1_ctrl.deleteGame()">
+                                	
+                                	<input type="submit" value="Delete" class="btn btn-primary btn-sm"/>
+                                </form>
+                                
                                 </td>
                             </tr>
                         </tbody>
