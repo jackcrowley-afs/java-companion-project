@@ -28,7 +28,7 @@ public class GameController {
 
 
 	/**
-	 * TODO 2.0 (Separation of concerns) consider moving all controller endpoints that return a ResponseEntity into a @RestController.
+	 * RESOLVED 2.0 (Separation of concerns) consider moving all controller endpoints that return a ResponseEntity into a @RestController.
 	 */
 	
 	
