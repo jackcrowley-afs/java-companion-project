@@ -5,7 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.organization.mvcproject.model.Game;
+import com.organization.mvcproject.api.model.Game;
+import com.organization.mvcproject.model.GameImpl;
 
 /** GameLoopBasedDAO:
  * 
@@ -23,7 +24,7 @@ public class GameLoopBasedDAO {
 
 	private static Long gameId = new Long(0);
 	private static Long companyId = new Long(0);
-	private static List<Game> games = new ArrayList<Game>();
+	private static List<Game> games = new ArrayList<>();
 
 	static {
 		games = populateGames();
@@ -31,17 +32,17 @@ public class GameLoopBasedDAO {
 
 	private static List<Game> populateGames() {
 
-		Game game1 = new Game();
+		Game game1 = new GameImpl();
 		game1.setId(++gameId);
 		game1.setGenre("Sport");
 		game1.setName("Rocket League");
 
-		Game game2 = new Game();
+		Game game2 = new GameImpl();
 		game2.setId(++gameId);
 		game2.setGenre("Shooter");
 		game2.setName("Halo 3");
 
-		Game game3 = new Game();
+		Game game3 = new GameImpl();
 		game3.setId(++gameId);
 		game3.setGenre("MMORPG");
 		game3.setName("Runescape");

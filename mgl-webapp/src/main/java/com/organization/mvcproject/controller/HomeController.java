@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.organization.mvcproject.model.Game;
+import com.organization.mvcproject.api.model.Game;
+import com.organization.mvcproject.model.GameImpl;
 import com.organization.mvcproject.model.Review;
 
 @Controller
@@ -64,7 +65,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/games", method = RequestMethod.GET)
 	public ModelAndView game() {
-		return new ModelAndView("games", "command", new Game());
+		return new ModelAndView("games", "command", new GameImpl());
 	}
     
     

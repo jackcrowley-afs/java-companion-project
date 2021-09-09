@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.organization.mvcproject.api.model.Game;
 import com.organization.mvcproject.api.service.GameService;
-import com.organization.mvcproject.model.Game;
+import com.organization.mvcproject.model.GameImpl;
 import com.organization.mvcproject.model.Review;
 
 
@@ -39,7 +40,7 @@ public class GameController {
 
 	
 	@RequestMapping(value = "/game/", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Void> createGame(@RequestBody Game game) {
+	public ResponseEntity<Void> createGame(@RequestBody GameImpl game) {
 		gameManager.saveGame(game);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}

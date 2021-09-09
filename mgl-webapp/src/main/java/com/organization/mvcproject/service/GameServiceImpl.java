@@ -8,8 +8,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.organization.mvcproject.api.model.Game;
 import com.organization.mvcproject.api.service.GameService;
-import com.organization.mvcproject.model.Game;
 import com.organization.mvcproject.repository.GameLoopBasedDAO;
 
 @Service
