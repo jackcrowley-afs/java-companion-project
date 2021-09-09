@@ -14,16 +14,6 @@ import com.organization.mvcproject.repository.GameLoopBasedDAO;
 @Service
 public class GameServiceImpl implements GameService {
 
-	/**
-	 * TODO 2.0 The class that interacts with persistent data is called a Data Access Object(DAO)
-	 *  or a Repository class. The private static list is mocking our persistance of games.
-	 *   
-	 *  Move this list, and methods operating on this list to an appropriately named package and class.
-	 *  
-	 *  UPDATE: Sept-3-2021:  Moved functions to MockDAO.
-	 *  All that remains is to make functions for them.
-	 */
-	
 	@Autowired
 	private GameLoopBasedDAO mockDao;
 	
@@ -55,6 +45,7 @@ public class GameServiceImpl implements GameService {
 	 * 
 	 * Return list of all games that match genre.  NULL if empty.
 	 * 
+	 * Suggested from the examples.
 	 * 
 	 * @param genre
 	 * @return
