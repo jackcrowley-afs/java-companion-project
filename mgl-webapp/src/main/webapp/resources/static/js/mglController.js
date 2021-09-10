@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('MGL_Task1_app').controller('MGL_Task1_Controller',
-		[ 'MGL_Task1_Service', function(MGL_Task1_Service) {
+angular.module('GameApp').controller('mglController',
+		[ 'mglService', function(mglService) {
 			var self = this;
 			self.game = {
 				game_id : '',
@@ -11,13 +11,13 @@ angular.module('MGL_Task1_app').controller('MGL_Task1_Controller',
 			self.games = [];
 
 			self.fetchAllGames = function(){
-				MGL_Task1_Service.fetchAllGames().then(function(data) {
+				mglService.fetchAllGames().then(function(data) {
 					self.games = data;
 				});
 			}
 
 			self.addGame = function(){
-				return MGL_Task1_Service.createGame(self.game).then( function() {
+				return mglService.createGame(self.game).then( function() {
 				self.fetchAllGames();
 				});
 			}
