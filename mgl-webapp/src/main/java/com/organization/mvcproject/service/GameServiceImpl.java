@@ -22,7 +22,7 @@ public class GameServiceImpl implements GameService {
 	//retrieveAllGames(): Gets all games on the system.
 	@Override
 	public List<Game> retrieveAllGames() {
-		return GameLoopBasedDAO.getGames();
+		return mockDao.getGames();
 	}
 
 	
@@ -30,14 +30,14 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public Game saveGame(Game game) {
 		//game.setId(MockDAO.incrementGameId());
-		GameLoopBasedDAO.saveGame(game);
+		mockDao.saveGame(game);
 		return game;
 	}
 	
 	
 	public boolean deleteGame(Long id) {
 		
-		return GameLoopBasedDAO.deleteGame(id);
+		return mockDao.deleteGame(id);
 	}
 
 
@@ -51,9 +51,9 @@ public class GameServiceImpl implements GameService {
 	 * @param genre
 	 * @return
 	 */
-	public static List<Game> findGamesByGenre(String genre)
+	public List<Game> findGamesByGenre(String genre)
 	{
-		return GameLoopBasedDAO.findGamesByGenre(genre);
+		return mockDao.findGamesByGenre(genre);
 	}
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.organization.mvcproject.api.dao.GameDAO;
 import com.organization.mvcproject.api.model.Game;
 import com.organization.mvcproject.model.GameImpl;
 
@@ -20,7 +21,7 @@ import com.organization.mvcproject.model.GameImpl;
  */
 
 @Repository
-public class GameLoopBasedDAO {
+public class GameLoopBasedDAO implements GameDAO {
 
 	private static Long gameId = new Long(0);
 	private static Long companyId = new Long(0);
@@ -55,22 +56,22 @@ public class GameLoopBasedDAO {
 	}
 
 	
-	public static List<Game> getGames()
+	public List<Game> getGames()
 	{
 		return games;
 	}
 	
-	public static Long getGameId()
+	public Long getGameId()
 	{
 		return gameId;
 	}
 	
-	public static Long incrementGameId()
+	public Long incrementGameId()
 	{
 		return ++gameId;
 	}
 	
-	public static void addGame(Game game)
+	public void addGame(Game game)
 	{	
 		games.add(game);
 	}
@@ -85,7 +86,7 @@ public class GameLoopBasedDAO {
 	 * @param game
 	 * @return
 	 */
-	public static Game saveGame(Game game)
+	public Game saveGame(Game game)
 	{
 		
 		//if the game ID is already there, we need to check the existing values.
@@ -157,7 +158,7 @@ public class GameLoopBasedDAO {
 	 * @param id
 	 * @return
 	 */
-	public static boolean deleteGame(Long id) {
+	public boolean deleteGame(Long id) {
 		
 		for (int x = 0 ; x < games.size() ; x++)
 		{
@@ -182,7 +183,7 @@ public class GameLoopBasedDAO {
 	 * @param genre
 	 * @return
 	 */
-	public static List<Game> findGamesByGenre(String genre) {
+	public List<Game> findGamesByGenre(String genre) {
 		
 		
 		List<Game> returnList = new ArrayList<Game>();
