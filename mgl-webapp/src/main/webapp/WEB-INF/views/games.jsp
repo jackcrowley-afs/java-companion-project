@@ -86,7 +86,7 @@
                                 <td>
                                 
                                 
-                                <form ng-submit="MGL_T1_ctrl.updateGame()">
+                                <form ng-submit="MGL_T1_ctrl.updateGame(currentGame)">
                                 	
                                 	<input type="submit" value="Update" class="btn btn-primary btn-sm"/>
                                 </form>
@@ -95,7 +95,7 @@
                                 
                                 <!--  SEPT-9: Add a Deletion Button Here. -->
                                 <td>
-                                <form ng-submit="MGL_T1_ctrl.deleteGame()">
+                                <form ng-submit="MGL_T1_ctrl.deleteGame(currentGame)">
                                 	
                                 	<input type="submit" value="Delete" class="btn btn-primary btn-sm"/>
                                 </form>

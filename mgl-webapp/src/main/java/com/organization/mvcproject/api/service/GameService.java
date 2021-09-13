@@ -12,7 +12,7 @@ public interface GameService {
 
 	Game saveGame(Game game);
 	
-	boolean deleteGame(Long id);
+	boolean deleteGame(Game game);
 	
 
 }

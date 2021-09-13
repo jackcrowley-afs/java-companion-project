@@ -52,10 +52,10 @@ public class GameController {
 	 * 
 	 */
 	@RequestMapping(value = "/game/", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> deleteGame(long id)
+	public ResponseEntity<Boolean> deleteGame(Game game)
 	{
 		//Here, we call GameManager and call deleteGame.
-		Boolean ans = gameManager.deleteGame(id);
+		Boolean ans = gameManager.deleteGame(game);
 		
 		return new ResponseEntity<Boolean>(ans, HttpStatus.OK);
 	}

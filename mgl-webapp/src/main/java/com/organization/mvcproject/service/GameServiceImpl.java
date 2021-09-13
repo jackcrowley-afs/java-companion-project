@@ -35,7 +35,9 @@ public class GameServiceImpl implements GameService {
 	}
 	
 	
-	public boolean deleteGame(Long id) {
+	public boolean deleteGame(Game game) {
+		
+		Long id = game.getId();
 		
 		return mockDao.deleteGame(id);
 	}

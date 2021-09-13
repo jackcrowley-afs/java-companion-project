@@ -24,5 +24,10 @@ angular.module('GameApp').factory('mglService', ['$http', function($http) {
 				}
 			);
 		}
+		
+		function deleteGame(game)
+		{
+			
+		}
 
 }]);
