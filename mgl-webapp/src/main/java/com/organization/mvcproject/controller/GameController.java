@@ -42,6 +42,23 @@ public class GameController {
 	@RequestMapping(value = "/game/", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Void> createGame(@RequestBody GameImpl game) {
 		gameManager.saveGame(game);
-		return new ResponseEntity<Void>(HttpStatus.CREATED);
+		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
+	
+	
+	
+	/*
+	 * 3.0 Task:  Create Request Mapping for the Update and Delete CRUD Functionality.
+	 * 
+	 */
+	@RequestMapping(value = "/game/", method = RequestMethod.DELETE)
+	public ResponseEntity<Boolean> deleteGame(long id)
+	{
+		//Here, we call GameManager and call deleteGame.
+		Boolean ans = gameManager.deleteGame(id);
+		
+		return new ResponseEntity<Boolean>(ans, HttpStatus.OK);
+	}
+	
+	
 }
