@@ -67,11 +67,23 @@ public class GameController {
 		return new ResponseEntity<Boolean>(ans, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/game/", method = RequestMethod.PUT)
-	public ResponseEntity<Boolean> updateGame(@RequestBody GameImpl game)
+	@RequestMapping(value = "/game/{id},{name},{genre}", method = RequestMethod.PUT)
+	public ResponseEntity<Boolean> updateGame(@PathVariable String id, @PathVariable String name, @PathVariable String genre)
 	{
+		Long longId = Long.valueOf(id);
+		
+		Game game = new GameImpl();
+		
+		game.setId(longId);
+		
+		game.setGenre(genre);
+		
+		game.setName(name);
+		
 		//Here, we call GameManager and call deleteGame.
 		Boolean ans = gameManager.updateGame(game);
+		
+		
 		
 		return new ResponseEntity<Boolean>(ans, HttpStatus.OK);
 	}

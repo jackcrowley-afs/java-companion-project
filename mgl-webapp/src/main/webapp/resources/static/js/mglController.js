@@ -36,9 +36,15 @@ angular.module('GameApp').controller('mglController',
 				
 				console.log("Update Game with ID of " + game1.id);
 				
-				return mglService.updateGame(game1.id).then( function() {
+				console.log("Game Name in Text Field: " + self.game.name);
+				console.log(self.game.genre);
+				
+				return mglService.updateGameById(game1.id, self.game.name, self.game.genre).then( function() {
 				self.fetchAllGames();
 				});
+				
+				
+				
 			}
 
 			self.fetchAllGames();
