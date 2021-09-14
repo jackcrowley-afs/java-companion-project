@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -50,15 +51,31 @@ public class GameController {
 	/*
 	 * 3.0 Task:  Create Request Mapping for the Update and Delete CRUD Functionality.
 	 * 
+	 * 14 Sep.  No choice.  I need to make use of the PathVariable Style.
+	 * 
 	 */
-	@RequestMapping(value = "/game/", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> deleteGame(Game game)
+	@RequestMapping(value = "/game/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Boolean> deleteGame(@PathVariable String id)
 	{
+		System.out.println("Id String: " + id);
+		
+		Long longId = Long.valueOf(id);
+		
 		//Here, we call GameManager and call deleteGame.
-		Boolean ans = gameManager.deleteGame(game);
+		Boolean ans = gameManager.deleteGame(longId);
 		
 		return new ResponseEntity<Boolean>(ans, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/game/", method = RequestMethod.PUT)
+	public ResponseEntity<Boolean> updateGame(@RequestBody GameImpl game)
+	{
+		//Here, we call GameManager and call deleteGame.
+		Boolean ans = gameManager.updateGame(game);
+		
+		return new ResponseEntity<Boolean>(ans, HttpStatus.OK);
+	}
+	
 	
 	
 }

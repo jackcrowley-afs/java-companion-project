@@ -160,9 +160,11 @@ public class GameLoopBasedDAO implements GameDAO {
 	 */
 	public boolean deleteGame(Long id) {
 		
+		System.out.println(id);
+		
 		for (int x = 0 ; x < games.size() ; x++)
 		{
-			if(id == games.get(x).getId())
+			if(games.get(x).getId().equals(id))
 			{
 				games.remove(games.get(x));
 				return true;

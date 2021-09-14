@@ -35,9 +35,9 @@ public class GameServiceImpl implements GameService {
 	}
 	
 	
-	public boolean deleteGame(Game game) {
+	public boolean deleteGame(long id) {
 		
-		Long id = game.getId();
+		
 		
 		return mockDao.deleteGame(id);
 	}
@@ -56,6 +56,15 @@ public class GameServiceImpl implements GameService {
 	public List<Game> findGamesByGenre(String genre)
 	{
 		return mockDao.findGamesByGenre(genre);
+	}
+
+
+	@Override
+	public Boolean updateGame(Game game) {
+		
+		mockDao.saveGame(game);
+		
+		return true;
 	}
 
 }

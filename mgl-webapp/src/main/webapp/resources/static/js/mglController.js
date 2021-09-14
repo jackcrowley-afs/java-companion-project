@@ -26,13 +26,19 @@ angular.module('GameApp').controller('mglController',
 				
 				console.log("Delete function with ID of " + game1.id);
 				
-				
+				return mglService.deleteGame(game1.id).then( function() {
+				self.fetchAllGames();
+				});
 				
 			}
 			
 			self.updateGame = function(game1){
 				
 				console.log("Update Game with ID of " + game1.id);
+				
+				return mglService.updateGame(game1.id).then( function() {
+				self.fetchAllGames();
+				});
 			}
 
 			self.fetchAllGames();
