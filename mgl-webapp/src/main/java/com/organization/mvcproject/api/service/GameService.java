@@ -16,5 +16,6 @@ public interface GameService {
 
 	Boolean updateGame(Game game);
 	
+	List<Game> findGamesByGenre(String genre);
 
 }

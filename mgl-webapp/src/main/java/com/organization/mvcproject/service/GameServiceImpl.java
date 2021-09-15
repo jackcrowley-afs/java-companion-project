@@ -53,6 +53,7 @@ public class GameServiceImpl implements GameService {
 	 * @param genre
 	 * @return
 	 */
+	@Override
 	public List<Game> findGamesByGenre(String genre)
 	{
 		return mockDao.findGamesByGenre(genre);

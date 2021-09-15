@@ -88,6 +88,9 @@ public class GameController {
 		return new ResponseEntity<Boolean>(ans, HttpStatus.OK);
 	}
 	
-	
+	@RequestMapping(value = "/game/genre/{genre}", method = RequestMethod.GET)
+	public ResponseEntity<List<Game>> getGamesByGenre(@PathVariable String genre) {
+		return new ResponseEntity<List<Game>>(gameManager.findGamesByGenre(genre), HttpStatus.OK);
+	}
 	
 }

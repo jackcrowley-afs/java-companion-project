@@ -54,8 +54,18 @@ angular.module('GameApp').controller('mglController',
 				
 				console.log(self.filterGenre);
 				
+				if(self.filterGenre === "")
+				{
+					
+					return self.fetchAllGames();
+				}
 				
-				return mglService.getGamesByGenre(self.filterGenre);
+				
+				return mglService.getGamesByGenre(self.filterGenre).then( function(data) {
+				
+				self.games = data;
+				
+				});
 				
 			}
 
