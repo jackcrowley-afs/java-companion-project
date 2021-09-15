@@ -8,10 +8,15 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.organization.mvcproject.api.model.Game;
@@ -20,7 +25,7 @@ import com.organization.mvcproject.api.service.GameService;
 import com.organization.mvcproject.model.GameImpl;
 
 
-@Controller
+@RestController
 public class GameController {
 
 	
@@ -34,13 +39,13 @@ public class GameController {
 	 */
 	
 	
-	@RequestMapping(value = "/game/", method = RequestMethod.GET)
+	@GetMapping(value = "/game/")
 	public ResponseEntity<List<Game>> fetchAllGames() {
 		return new ResponseEntity<List<Game>>(gameManager.retrieveAllGames(), HttpStatus.OK);
 	}
 
 	
-	@RequestMapping(value = "/game/", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/game/", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Void> createGame(@RequestBody GameImpl game) {
 		gameManager.saveGame(game);
 		return new ResponseEntity<>(HttpStatus.CREATED);
@@ -54,7 +59,7 @@ public class GameController {
 	 * 14 Sep.  No choice.  I need to make use of the PathVariable Style.
 	 * 
 	 */
-	@RequestMapping(value = "/game/{id}", method = RequestMethod.DELETE)
+	@DeleteMapping(value = "/game/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Boolean> deleteGame(@PathVariable String id)
 	{
 		System.out.println("Id String: " + id);
@@ -67,7 +72,7 @@ public class GameController {
 		return new ResponseEntity<Boolean>(ans, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/game/{id},{name},{genre}", method = RequestMethod.PUT)
+	@PutMapping(value = "/game/{id},{name},{genre}")
 	public ResponseEntity<Boolean> updateGame(@PathVariable String id, @PathVariable String name, @PathVariable String genre)
 	{
 		Long longId = Long.valueOf(id);
@@ -88,7 +93,7 @@ public class GameController {
 		return new ResponseEntity<Boolean>(ans, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/game/genre/{genre}", method = RequestMethod.GET)
+	@GetMapping(value = "/game/genre/{genre}")
 	public ResponseEntity<List<Game>> getGamesByGenre(@PathVariable String genre) {
 		return new ResponseEntity<List<Game>>(gameManager.findGamesByGenre(genre), HttpStatus.OK);
 	}
