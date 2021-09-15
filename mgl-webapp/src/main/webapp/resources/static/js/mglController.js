@@ -26,8 +26,6 @@ angular.module('GameApp').controller('mglController',
 			
 			self.deleteGame = function(game1){
 				
-				console.log("Delete function with ID of " + game1.id);
-				
 				return mglService.deleteGame(game1.id).then( function() {
 				self.fetchAllGames();
 				});
@@ -35,11 +33,6 @@ angular.module('GameApp').controller('mglController',
 			}
 			
 			self.updateGame = function(game1){
-				
-				console.log("Update Game with ID of " + game1.id);
-				
-				console.log("Game Name in Text Field: " + self.game.name);
-				console.log(self.game.genre);
 				
 				return mglService.updateGameById(game1.id, self.game.name, self.game.genre).then( function() {
 				self.fetchAllGames();

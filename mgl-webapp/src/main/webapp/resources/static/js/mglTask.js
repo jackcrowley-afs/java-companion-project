@@ -40,9 +40,6 @@ angular.module('GameApp').factory('mglService', ['$http', function($http) {
 		
 		function deleteGame(id)
 		{
-			console.log(id);
-			
-			
 			
 			return $http.delete(REST_SERVICE_URI + id).then(function(response) {
 					return response.data;
@@ -52,7 +49,6 @@ angular.module('GameApp').factory('mglService', ['$http', function($http) {
 		
 		function getGamesByGenre(genre)
 		{
-			console.log(genre);
 			
 			return $http.get(REST_SERVICE_URI + "genre/" + genre).then(function(response) {
 				return response.data;
