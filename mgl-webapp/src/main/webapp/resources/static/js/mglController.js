@@ -15,6 +15,9 @@ angular.module('GameApp').controller('mglController',
 			self.fetchAllGames = function(){
 				mglService.fetchAllGames().then(function(data) {
 					self.games = data;
+				}).finally(function(){
+					
+					self.clearFields();
 				});
 			}
 
@@ -61,6 +64,13 @@ angular.module('GameApp').controller('mglController',
 				});
 				
 			}
+			
+			self.clearFields = function(){
+				
+				self.game.name = '';
+				self.game.genre = '';
+			}
+			
 
 			self.fetchAllGames();
 		} ]);
