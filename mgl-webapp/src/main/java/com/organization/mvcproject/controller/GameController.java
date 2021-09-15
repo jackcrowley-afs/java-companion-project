@@ -59,7 +59,7 @@ public class GameController {
 	 * 14 Sep.  No choice.  I need to make use of the PathVariable Style.
 	 * 
 	 */
-	@DeleteMapping(value = "/game/{id}", method = RequestMethod.DELETE)
+	@DeleteMapping(value = "/game/{id}")
 	public ResponseEntity<Boolean> deleteGame(@PathVariable String id)
 	{
 		System.out.println("Id String: " + id);
