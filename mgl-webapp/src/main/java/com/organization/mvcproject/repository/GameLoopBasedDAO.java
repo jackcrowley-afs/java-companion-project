@@ -115,8 +115,6 @@ public class GameLoopBasedDAO implements GameDAO {
 		//This cast is considered unnecessary, but we need to 2.1 refactoring.
 		games.add((Game)game);
 		
-		System.out.println(games);
-		
 		return game;
 		
 	}
@@ -159,8 +157,6 @@ public class GameLoopBasedDAO implements GameDAO {
 	 * @return
 	 */
 	public boolean deleteGame(Long id) {
-		
-		System.out.println(id);
 		
 		for (int x = 0 ; x < games.size() ; x++)
 		{

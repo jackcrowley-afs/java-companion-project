@@ -62,8 +62,6 @@ public class GameController {
 	@DeleteMapping(value = "/game/{id}")
 	public ResponseEntity<Boolean> deleteGame(@PathVariable String id)
 	{
-		System.out.println("Id String: " + id);
-		
 		Long longId = Long.valueOf(id);
 		
 		//Here, we call GameManager and call deleteGame.
