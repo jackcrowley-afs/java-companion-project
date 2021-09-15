@@ -8,7 +8,8 @@ angular.module('GameApp').factory('mglService', ['$http', function($http) {
 			fetchAllGames : fetchAllGames,
 			createGame : createGame,
 			deleteGame: deleteGame,
-			updateGameById: updateGameById
+			updateGameById: updateGameById,
+			getGamesByGenre: getGamesByGenre
 		};
 
 		return factory;
@@ -49,6 +50,16 @@ angular.module('GameApp').factory('mglService', ['$http', function($http) {
 			);
 		}
 		
+		function getGamesByGenre(genre)
+		{
+			console.log(genre);
+			
+			return $http.get(REST_SERVICE_URI + "genre/" + genre).then(function(response) {
+				return response.data;
+				}
+			);	
+			
+		}
 
 
 }]);

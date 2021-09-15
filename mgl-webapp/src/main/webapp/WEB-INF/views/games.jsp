@@ -66,6 +66,21 @@
                         </div>
                     </form>
                 </div>
+                
+                <div class="row">
+                	<div class="form-group col-md-12">
+                		<form ng-submit="MGL_T1_ctrl.getGamesByGenre()" name="gameForm" class="form-horizontal">
+                		<label class="col-md-2 control-lable text-light" for="filter_genre">Filter Games By Genre</label>
+        			      <div class="col-md-7">
+                              <input type="text" ng-model="MGL_T1_ctrl.filterGenre" id="filter_genre" class="form-control input-sm" placeholder="Enter the genre of the new game" />
+                              <br/>
+                              <input type="submit" value="Filter" class="btn btn-primary btn-sm">
+                          </div>
+                          </form>
+                	</div>
+                </div>
+                
+                
             </div>
             <div class="panel panel-default">
                 <!-- Default panel contents -->

@@ -9,6 +9,8 @@ angular.module('GameApp').controller('mglController',
 				game_genre : ''
 			};
 			self.games = [];
+			
+			self.filterGenre = '';
 
 			self.fetchAllGames = function(){
 				mglService.fetchAllGames().then(function(data) {
@@ -44,6 +46,16 @@ angular.module('GameApp').controller('mglController',
 				});
 				
 				
+				
+			}
+			
+			self.getGamesByGenre = function(){
+				
+				
+				console.log(self.filterGenre);
+				
+				
+				return mglService.getGamesByGenre(self.filterGenre);
 				
 			}
 
