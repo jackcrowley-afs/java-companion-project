@@ -15,9 +15,6 @@ import com.organization.mvcproject.model.GameImpl;
  *  
  *  This class needs to 
  *  "lift the static List declaration of our data from the Service(GameServiceImpl or Game_Service_Impl) into the MockDAO."
- * 
- * 
- * 
  */
 
 @Repository
@@ -125,9 +122,6 @@ public class GameLoopBasedDAO implements GameDAO {
 	 * 
 	 * Find the first game in the ArrayList with the specified ID.
 	 * 
-	 * 
-	 * 
-	 * 
 	 * @param id
 	 * @return
 	 */
@@ -150,7 +144,6 @@ public class GameLoopBasedDAO implements GameDAO {
 	 * deleteGame
 	 * 
 	 * Deletes the game that matches the ID of the parameter.
-	 * 
 	 * Note: Game IDs are unique.  There should be no collisions within the list.
 	 * 
 	 * @param id
