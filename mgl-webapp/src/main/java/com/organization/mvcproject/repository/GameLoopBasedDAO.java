@@ -9,7 +9,7 @@ import com.organization.mvcproject.api.dao.GameDAO;
 import com.organization.mvcproject.api.model.Game;
 import com.organization.mvcproject.model.GameImpl;
 
-/** This class is an implementation of the GameDAO interface.
+/** <p>This class is an implementation of the GameDAO interface.</p>
  * 
  *  Required Tasks:
  *  
