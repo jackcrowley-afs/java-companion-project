@@ -28,11 +28,11 @@ angular.module('GameApp').controller('mglController',
 				
 				console.log(self.game.name.length)
 				
-		//		if(self.game.name.length < MINLENGTH || self.game.genre.length < MINLENGTH)
-		//		{
-		//			self.clearFields();
-		//			return;
-		//		}
+				if(self.game.name.length < MINLENGTH)
+				{
+					self.clearFields();
+					return;
+				}
 				
 				
 				return mglService.createGame(self.game).then( function() {
@@ -59,14 +59,12 @@ angular.module('GameApp').controller('mglController',
 			self.getGamesByGenre = function(){
 				
 				
-				console.log(self.filterGenre);
-				
-				if(self.filterGenre === "")
+				if(self.filterGenre == '')
 				{
-					
-					return self.fetchAllGames();
+					return;
 				}
 				
+				console.log(self.filterGenre);
 				
 				return mglService.getGamesByGenre(self.filterGenre).then( function(data) {
 				
@@ -82,6 +80,14 @@ angular.module('GameApp').controller('mglController',
 				
 				self.game.name = '';
 				self.game.genre = '';
+			}
+			
+			self.resetFilter = function(){
+				
+				self.filterGenre = '';
+				
+				self.fetchAllGames();
+				
 			}
 			
 
