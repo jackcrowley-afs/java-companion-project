@@ -53,7 +53,6 @@ public class GameController {
 	{
 		Long longId = Long.valueOf(id);
 		
-		//Here, we call GameManager and call deleteGame.
 		Boolean ans = gameManager.deleteGame(longId);
 		
 		return new ResponseEntity<Boolean>(ans, HttpStatus.OK);
