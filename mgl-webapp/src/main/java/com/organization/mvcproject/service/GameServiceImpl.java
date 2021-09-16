@@ -19,14 +19,12 @@ public class GameServiceImpl implements GameService {
 	private GameLoopBasedDAO mockDao;
 	
 	
-	//retrieveAllGames(): Gets all games on the system.
 	@Override
 	public List<Game> retrieveAllGames() {
 		return mockDao.getGames();
 	}
 
 	
-	//saveGame: Saves a Game on the system.
 	@Override
 	public Game saveGame(Game game) {
 		//game.setId(MockDAO.incrementGameId());
@@ -50,8 +48,8 @@ public class GameServiceImpl implements GameService {
 	 * 
 	 * Suggested from the examples.
 	 * 
-	 * @param genre
-	 * @return
+	 * @param genre of a game to find.
+	 * @return List of all games that match genre.
 	 */
 	@Override
 	public List<Game> findGamesByGenre(String genre)
