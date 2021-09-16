@@ -31,12 +31,6 @@ public class GameController {
 	
 	@Autowired
 	private GameService gameManager;
-
-
-
-	/**
-	 * RESOLVED 2.0 (Separation of concerns) consider moving all controller endpoints that return a ResponseEntity into a @RestController.
-	 */
 	
 	
 	@GetMapping(value = "/game/")
@@ -53,12 +47,7 @@ public class GameController {
 	
 	
 	
-	/*
-	 * 3.0 Task:  Create Request Mapping for the Update and Delete CRUD Functionality.
-	 * 
-	 * 14 Sep.  No choice.  I need to make use of the PathVariable Style.
-	 * 
-	 */
+
 	@DeleteMapping(value = "/game/{id}")
 	public ResponseEntity<Boolean> deleteGame(@PathVariable String id)
 	{
@@ -83,9 +72,7 @@ public class GameController {
 		
 		game.setName(name);
 		
-		//Here, we call GameManager and call deleteGame.
 		Boolean ans = gameManager.updateGame(game);
-		
 		
 		
 		return new ResponseEntity<Boolean>(ans, HttpStatus.OK);
