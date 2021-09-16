@@ -9,12 +9,17 @@ import com.organization.mvcproject.api.dao.GameDAO;
 import com.organization.mvcproject.api.model.Game;
 import com.organization.mvcproject.model.GameImpl;
 
-/** GameLoopBasedDAO:
+/** This class is an implementation of the GameDAO interface.
  * 
- *  2.0 Task:
+ *  Required Tasks:
  *  
- *  This class needs to 
- *  "lift the static List declaration of our data from the Service(GameServiceImpl or Game_Service_Impl) into the MockDAO."
+ *  <ul>
+ *  	<li>Add new games</li>
+ *   	<li>Delete a game given an id</li>
+ *   	<li>Update a game given an id</li>
+ *   	<li>Return a list of all games based on the Genre</li>
+ *  
+ *  </ul>
  */
 
 @Repository
@@ -80,25 +85,25 @@ public class GameLoopBasedDAO implements GameDAO {
 	 * 2.0 Task:  Save a game, but update it if it already exists.
 	 * 
 	 * 
-	 * @param game
-	 * @return
+	 * @param game which has an id number that we check for.
+	 * @return game, if we find no id collision.  Otherwise, the game with the id collision.
 	 */
 	public Game saveGame(Game game)
 	{
 		
-		//if the game ID is already there, we need to check the existing values.
+		
 		if(game.getId() != null)
 		{
 			Game foundGame = findGameById(game.getId());
 					
-			//If this is true, then we have a legit game with the same ID in the list.
+			
 			if(foundGame != null)
 			{
 				for (int x = 0 ; x < games.size() ; x++)
 				{
 					if(game.getId().equals(games.get(x).getId()))
 					{
-						//We have confirmed this game exists.  We update and close.
+						
 						return games.set(x, game);
 					}
 					
@@ -109,7 +114,6 @@ public class GameLoopBasedDAO implements GameDAO {
 		
 		game.setId(++gameId);
 		
-		//This cast is considered unnecessary, but we need to 2.1 refactoring.
 		games.add((Game)game);
 		
 		return game;
@@ -171,8 +175,8 @@ public class GameLoopBasedDAO implements GameDAO {
 	 * Return a list of all games found that match the genre parameter.
 	 * Return null if nothing is found.
 	 *
-	 * @param genre
-	 * @return
+	 * @param genre of the games to find.
+	 * @return List of all the Games that match the genre.
 	 */
 	public List<Game> findGamesByGenre(String genre) {
 		
