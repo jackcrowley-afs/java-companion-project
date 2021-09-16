@@ -40,10 +40,6 @@ public class HomeController {
         return testString;
     }
     
-    /* 2.0 Specification:  Move the functions that don't return a RequestEntity Here.
-     * 
-     * 
-     */
     
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
