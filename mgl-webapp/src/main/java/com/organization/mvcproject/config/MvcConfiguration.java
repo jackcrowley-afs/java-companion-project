@@ -39,8 +39,9 @@ public class MvcConfiguration implements WebMvcConfigurer {
 	}
 	
 
+	//Can this be private?
 	@Bean
-	RestTemplate restTemplate() {
+	private RestTemplate restTemplate() {
 		RestTemplate restTemplate = new RestTemplate();
 		MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
 		converter.setObjectMapper(new ObjectMapper());
