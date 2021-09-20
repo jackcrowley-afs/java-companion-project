@@ -29,18 +29,18 @@
     <body ng-app="GameApp" class="ng-cloak">
         <mgl:myNav/>
         <br>
-        <!-- TODO: MGL_T1_ctrl has GOT TO GO as a name -->
-        <div class="container" ng-controller="mglController as MGL_T1_ctrl">
+        <!-- TODO: mglTaskController has GOT TO GO as a name -->
+        <div class="container" ng-controller="mglController as mglTaskController">
             <div class="panel panel-default">
                 <div class="panel-heading text-light"><span class="lead">Game Registration Form </span></div>
                 <div class="formcontainer">
-                    <form ng-submit="MGL_T1_ctrl.addGame()" name="gameForm" class="form-horizontal">
-                        <input type="hidden" ng-model="MGL_T1_ctrl.game.id" />
+                    <form ng-submit="mglTaskController.addGame()" name="gameForm" class="form-horizontal">
+                        <input type="hidden" ng-model="mglTaskController.game.id" />
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label class="col-md-2 control-lable text-light" for="game_name">Name*</label>
                                 <div class="col-md-7">
-                                    <input type="text" ng-model="MGL_T1_ctrl.game.name" id="game_name" class="game_name form-control input-sm" placeholder="Enter the name of the new game [required]" required />
+                                    <input type="text" ng-model="mglTaskController.game.name" id="game_name" class="game_name form-control input-sm" placeholder="Enter the name of the new game [required]" required />
                                     <div class="has-error" ng-show="gameForm.$dirty">
                                         <span ng-show="gameForm.game_name.$error.required">This is a required field</span>
                                         <span ng-show="gameForm.game_name.$error.minlength">Minimum length required is 3</span>
@@ -55,7 +55,7 @@
                             <div class="form-group col-md-12">
                                 <label class="col-md-2 control-lable text-light" for="game_genre">Game Genre</label>
                                 <div class="col-md-7">
-                                    <input type="text" ng-model="MGL_T1_ctrl.game.genre" id="game_genre" class="form-control input-sm" placeholder="Enter the genre of the new game" />
+                                    <input type="text" ng-model="mglTaskController.game.genre" id="game_genre" class="form-control input-sm" placeholder="Enter the genre of the new game" />
                                 </div>
                             </div>
                         </div>
@@ -70,10 +70,10 @@
                 
                 <div class="row">
                 	<div class="form-group col-md-12">
-                		<form ng-submit="MGL_T1_ctrl.getGamesByGenre()" name="gameForm" class="form-horizontal">
+                		<form ng-submit="mglTaskController.getGamesByGenre()" name="gameForm" class="form-horizontal">
                 		<label class="col-md-2 control-lable text-light" for="filter_genre">Filter Games By Genre</label>
         			      <div class="col-md-7">
-                              <input type="text" ng-model="MGL_T1_ctrl.filterGenre" id="filter_genre" class="form-control input-sm" placeholder="Enter a Genre to filter." />
+                              <input type="text" ng-model="mglTaskController.filterGenre" id="filter_genre" class="form-control input-sm" placeholder="Enter a Genre to filter." />
                           </div>
                           
                           <br/>
@@ -89,7 +89,7 @@
                 
                 <div class="row">
                 	<div class = "form-actions floatRight">
-                		<form ng-submit="MGL_T1_ctrl.resetFilter()" name="gameForm" class="form-horizontal">
+                		<form ng-submit="mglTaskController.resetFilter()" name="gameForm" class="form-horizontal">
                 			<input type="submit" value="Reset Filter" class="btn btn-primary btn-sm">
                 		</form>
                 	</div>            
@@ -110,13 +110,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="currentGame in MGL_T1_ctrl.games">
+                            <tr ng-repeat="currentGame in mglTaskController.games">
                                 <td><span ng-bind="currentGame.name"></span></td>
                                 <td><span ng-bind="currentGame.genre"></span></td>
                                 <td>
                                 
                                 
-                                <form ng-submit="MGL_T1_ctrl.updateGame(currentGame)">
+                                <form ng-submit="mglTaskController.updateGame(currentGame)">
                                 	
                                 	<input type="submit" value="Update" class="btn btn-primary btn-sm"/>
                                 </form>
@@ -125,7 +125,7 @@
                                 
                                 <!--  SEPT-9: Add a Deletion Button Here. -->
                                 <td>
-                                <form ng-submit="MGL_T1_ctrl.deleteGame(currentGame)">
+                                <form ng-submit="mglTaskController.deleteGame(currentGame)">
                                 	
                                 	<input type="submit" value="Delete" class="btn btn-primary btn-sm"/>
                                 </form>
