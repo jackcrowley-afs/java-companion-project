@@ -185,6 +185,9 @@ public class GameLoopBasedDAO implements GameDAO {
 		
 		for (Game game : games)
 		{
+			//This is NOT null safe.
+			//genre should NOT be null
+			//TODO: Either do a null check or ensure we aren't getting a null here.
 			if(game.getGenre().equals(genre))
 			{
 				returnList.add(game);
