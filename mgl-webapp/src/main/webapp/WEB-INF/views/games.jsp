@@ -29,6 +29,7 @@
     <body ng-app="GameApp" class="ng-cloak">
         <mgl:myNav/>
         <br>
+        <!-- TODO: MGL_T1_ctrl has GOT TO GO as a name -->
         <div class="container" ng-controller="mglController as MGL_T1_ctrl">
             <div class="panel panel-default">
                 <div class="panel-heading text-light"><span class="lead">Game Registration Form </span></div>

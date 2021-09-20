@@ -59,18 +59,17 @@ angular.module('GameApp').controller('mglController',
 			self.getGamesByGenre = function(){
 				
 				
+				//TODO: Provide user feedback for getting games by id.
 				if(self.filterGenre == '')
 				{
 					return;
 				}
 				
-				console.log(self.filterGenre);
-				
 				return mglService.getGamesByGenre(self.filterGenre).then( function(data) {
 				
-				self.games = data;
+					self.games = data;
 				
-				self.filterGenre = '';
+					self.filterGenre = '';
 				
 				});
 				
@@ -82,6 +81,8 @@ angular.module('GameApp').controller('mglController',
 				self.game.genre = '';
 			}
 			
+			
+			//Reset the filter and get all the games back!
 			self.resetFilter = function(){
 				
 				self.filterGenre = '';
