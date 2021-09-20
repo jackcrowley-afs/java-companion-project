@@ -31,7 +31,7 @@ angular.module('GameApp').factory('mglService', ['$http', function($http) {
 		function updateGameById(id, name, genre)
 		{
 			
-			return $http.put(REST_SERVICE_URI + id + "," + name + "," + genre).then(function(response) {
+			return $http.put(REST_SERVICE_URI + id + "/" + name + "/" + genre).then(function(response) {
 				return response.data;
 				}
 			);	

@@ -34,13 +34,14 @@ public class GameController {
 
 	
 	@PostMapping(value = "/game/", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Void> createGame(@RequestBody GameImpl game) {
+	public ResponseEntity<Game> createGame(@RequestBody GameImpl game) {
 		
 		
 		//TODO: (Optional) Return the saved game back from gameService.
 		//Note: This may require changing the Game DAO work.
-		gameService.saveGame(game);
-		return new ResponseEntity<>(HttpStatus.CREATED);
+		
+		Game game1 = gameService.saveGame(game);
+		return new ResponseEntity<Game>(game1, HttpStatus.CREATED);
 	}
 	
 	
@@ -65,7 +66,7 @@ public class GameController {
 	
 	//TODO: Make this format go root/a/b/c (for path variable system)
 	//Look up @PathParam Annotation
-	@PutMapping(value = "/game/{id},{name},{genre}")
+	@PutMapping(value = "/game/{id}/{name}/{genre}")
 	public ResponseEntity<Boolean> updateGame(@PathVariable String id, @PathVariable String name, @PathVariable String genre)
 	{
 		Long longId = Long.valueOf(id);
