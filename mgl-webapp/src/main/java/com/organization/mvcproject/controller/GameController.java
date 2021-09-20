@@ -37,9 +37,6 @@ public class GameController {
 	public ResponseEntity<Game> createGame(@RequestBody GameImpl game) {
 		
 		
-		//TODO: (Optional) Return the saved game back from gameService.
-		//Note: This may require changing the Game DAO work.
-		
 		Game game1 = gameService.saveGame(game);
 		return new ResponseEntity<Game>(game1, HttpStatus.CREATED);
 	}
@@ -64,28 +61,15 @@ public class GameController {
 		return new ResponseEntity<Boolean>(ans, HttpStatus.OK);
 	}
 	
-	//TODO: Make this format go root/a/b/c (for path variable system)
-	//Look up @PathParam Annotation
+
 	@PutMapping(value = "/game/{id}/{name}/{genre}")
 	public ResponseEntity<Boolean> updateGame(@PathVariable String id, @PathVariable String name, @PathVariable String genre)
 	{
 		Long longId = Long.valueOf(id);
 		
+		Game game = gameService.fetchGameById(longId);
 		
-		//TODO: Use a Service to get an existing game rather than create a new one?
-		//Make a Manager method called findGameByID to get an existing game, then send it back down.
-		
-		
-		//TODO: Move the logic for setting the information into the Service.
-		Game game = new GameImpl();
-		
-		game.setId(longId);
-		
-		game.setGenre(genre);
-		
-		game.setName(name);
-		
-		Boolean ans = gameService.updateGame(game);
+		Boolean ans = gameService.updateGame(game, name, genre);
 		
 		
 		return new ResponseEntity<Boolean>(ans, HttpStatus.OK);

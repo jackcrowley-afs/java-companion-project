@@ -59,11 +59,23 @@ public class GameServiceImpl implements GameService {
 
 
 	@Override
-	public Boolean updateGame(Game game) {
+	public Boolean updateGame(Game game, String genre, String name) {
+		
+		
+		game.setGenre(genre);
+		
+		game.setName(name);
 		
 		mockDao.saveGame(game);
 		
 		return true;
+	}
+
+
+	@Override
+	public Game fetchGameById(Long longId) {
+		
+		return mockDao.fetchGameById(longId);
 	}
 
 }

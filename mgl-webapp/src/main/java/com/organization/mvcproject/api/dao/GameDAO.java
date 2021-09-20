@@ -24,4 +24,5 @@ public interface GameDAO {
 	
 	public List<Game> findGamesByGenre(String genre);
 	
+	public Game fetchGameById(Long id);
 }

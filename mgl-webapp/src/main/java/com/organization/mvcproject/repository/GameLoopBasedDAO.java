@@ -183,6 +183,13 @@ public class GameLoopBasedDAO implements GameDAO {
 		
 		List<Game> returnList = new ArrayList<Game>();
 		
+		//Null safety check
+		if(genre == null)
+		{
+			return returnList;
+		}
+		
+		
 		for (Game game : games)
 		{
 			//This is NOT null safe.
@@ -200,5 +207,20 @@ public class GameLoopBasedDAO implements GameDAO {
 		return (returnList.isEmpty() ? null : returnList);
 	}
 	
+	
+	public Game fetchGameById(Long id)
+	{
+		for (Game game: games)
+		{
+			if(game.getId().equals(id))
+			{
+				return game;
+			}
+			
+		}
+		
+		
+		return null;
+	}
 	
 }
