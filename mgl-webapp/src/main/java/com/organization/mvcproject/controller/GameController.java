@@ -35,6 +35,10 @@ public class GameController {
 	
 	@PostMapping(value = "/game/", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Void> createGame(@RequestBody GameImpl game) {
+		
+		
+		//TODO: (Optional) Return the saved game back from gameService.
+		//Note: This may require changing the Game DAO work.
 		gameService.saveGame(game);
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
@@ -45,6 +49,13 @@ public class GameController {
 	@DeleteMapping(value = "/game/{id}")
 	public ResponseEntity<Boolean> deleteGame(@PathVariable String id)
 	{
+		//Long Helper method parses the ID string into a long.
+		//We use longs for the ID because they are huge.
+		
+		
+		//But the max number of something in javascript is quite smaller than a long in java.		
+		//Treating this as a string also prevents any loss of information.
+		
 		Long longId = Long.valueOf(id);
 		
 		Boolean ans = gameService.deleteGame(longId);
@@ -81,6 +92,8 @@ public class GameController {
 	
 	@GetMapping(value = "/game/genre/{genre}")
 	public ResponseEntity<List<Game>> getGamesByGenre(@PathVariable String genre) {
+		
+		
 		return new ResponseEntity<List<Game>>(gameService.findGamesByGenre(genre), HttpStatus.OK);
 	}
 	
